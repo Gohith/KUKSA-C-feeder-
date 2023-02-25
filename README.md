@@ -8,24 +8,8 @@ https://covesa.github.io/vehicle_signal_specification/ --- VSS by COVESA
 
 Briefly the application architecture looks like:
 
-                             +-------------+
-                             |   DBCFile   |
-                             +-------------+            +-------------+
-                                    |                   |             |
-                                    |              |--->|  VSS Server |
-                                    |              |    |             |
-                                    |              |    +-------------+
-+-----------------+                 |              |
-|                 |         +-------|------+       |
-|  CAN Interface  |         |              |       |
-|       or        |------- >|  DBCFeeder   | --OR--|
-| dumpfile replay |         |              |       |
-|                 |         +--------------+       |
-+-----------------+                 |              |    +-------------+
-                                    |              |    |             |
-                            +--------------+       |--->|  Databroker |
-                            | vss_dbc.json |            |             |
-                            +--------------+            +-------------+
+![image](https://user-images.githubusercontent.com/23610194/221366021-43910fef-dee2-4b18-98f0-ecf2ca3c39cb.png)
+
 
 
 This C++ application requires some libraries (mentioned below) for connectivity to server and also parsing signal nodes from VSS and retrieving CAN messages from .dbc files. The whole application requires CMake to generate build system. 
